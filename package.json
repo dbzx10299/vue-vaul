@@ -1,23 +1,40 @@
 {
   "name": "vue-vaul",
-  "private": true,
   "version": "0.0.0",
+  "description": "A drawer component for Vue",
   "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/dbzx10299/vue-vaul#readme",
+  "bugs": {
+    "url": "https://github.com/dbzx10299/vue-vaul/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbzx10299/vue-vaul.git"
+  },
   "sideEffects": [
     "**/*.css"
   ],
+  "author": "David Bender <https://github.com/dbzx10299>",
   "files": [
     "dist"
   ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b ./tsconfig.lib.json && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.8",
     "reka-ui": "^2.2.1",
-    "tailwindcss": "^4.1.8",
     "vue-remove-scroll": "^1.0.2"
   },
   "devDependencies": {
@@ -28,9 +45,11 @@
     "vite": "^6.3.5",
     "vite-plugin-dts": "^4.5.4",
     "vite-plugin-lib-inject-css": "^2.2.2",
-    "vue-tsc": "^2.2.8"
+    "vue-tsc": "^2.2.8",
+    "@tailwindcss/vite": "^4.1.8",
+    "tailwindcss": "^4.1.8"
   },
   "peerDependencies": {
-    "vue": "^3.5.0"
+    "vue": "^3.0.0"
   }
 }
