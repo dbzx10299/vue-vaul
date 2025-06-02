@@ -4,6 +4,12 @@
   "description": "A drawer component for Vue",
   "type": "module",
   "license": "MIT",
+  "keywords": [
+    "vue",
+    "drawer",
+    "dialog",
+    "modal"
+  ],
   "homepage": "https://github.com/dbzx10299/vue-vaul#readme",
   "bugs": {
     "url": "https://github.com/dbzx10299/vue-vaul/issues"
