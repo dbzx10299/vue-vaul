@@ -1,5 +1,5 @@
 <script setup>
-import { Drawer } from 'vue-vaul'
+import { Drawer } from '../../../lib'
 </script>
 
 <template>
