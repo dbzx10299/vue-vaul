@@ -22,9 +22,9 @@ import DefaultDrawer from './DefaultDrawer.vue'
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  min-height: 60vh;
   gap: 16px;
   position: relative;
+  min-height: 75vh;
 }
 
 .wrapper-inner {
@@ -44,7 +44,7 @@ svg {
   height: 100%;
   width: 100%;
   inset: 0;
-  stroke: hsl(0 0% 10%);
+  stroke: hsl(0 0% 18%);
   max-width: 100%;
 }
 
