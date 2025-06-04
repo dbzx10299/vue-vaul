@@ -107,31 +107,10 @@ pre .line {
   }
 }
 
-.DocSearch-Button {
-  background: hsl(0 0% 10%);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: none;
-  min-width: 210px;
-  cursor: text;
-  color: #888;
-  height: 32px;
+.outline {
+  outline-width: 0;
 }
 
-.DocSearch-Button:hover {
-  border: none;
-  background: hsl(0 0% 10%);
-}
-
-.DocSearch-Button-Key {
-  font-family: var(--vp-font-family-base);
-  font-size: .75rem;
-  height: 20px;
-  padding: 0 2px;
-  min-width: 20px;
-  min-height: 20px;
-  line-height: 20px;
-  background-color: #111;
+.top-link {
+  color: #fff !important;
 }

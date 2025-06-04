@@ -10,9 +10,6 @@ export default defineConfig({
   },
   themeConfig: {
     // logo: '/site-logo.svg',
-    search: {
-      provider: 'local'
-    },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Examples', link: '/markdown-examples' }
@@ -31,7 +28,7 @@ export default defineConfig({
     ],
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2025-present David Bender'
+      copyright: 'Copyright © 2025-present Geist'
     }
   },
 })
