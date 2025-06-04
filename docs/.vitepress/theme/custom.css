@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Geist';
+  src: url(/fonts/Geist-Regular.woff2) format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url(/fonts/Geist-Medium.woff2) format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url(/fonts/Geist-SemiBold.woff2) format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url(/fonts/Geist-Bold.woff2) format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GeistMono';
+  src: url(/fonts/GeistMono-Regular.woff2) format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GeistMono';
+  src: url(/fonts/GeistMono-Medium.woff2) format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --vp-code-block-bg: hsl(0 0% 8%);
+  --vp-code-line-highlight-color: #4eac9a1a;
+  --vp-c-bg: hsl(0 0% 6%);
+  --vp-c-text-1: #ededed;
+  --vp-sidebar-bg-color: hsl(0 0% 6%);
+  --vp-c-brand-1: #00d7af;
+  --vp-font-family-mono: GeistMono, Menlo, Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace;
+  --vp-font-family-base: "Geist", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --vp-c-bg-soft: var(--vp-c-bg);
+  --vp-c-gutter: var(--vp-c-bg);
+  --vp-c-border: hsl(0 0% 12%);
+}
+
+::selection {
+  color: hsl(172.46 66.01% 50.39%);
+  background: hsl(178.6 84.31% 10%);
+}
+
+
+pre .line {
+  position: relative;
+}
+
+.vp-doc [class*='language-'] code .highlighted::after {
+  background: #00d7afad;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 2px;
+}
+
+.logo {
+  height: 20px !important;
+  width: 20px !important;
+  margin-right: 12px !important;
+}
+
+.title span {
+  font-size: 20px;
+  color: #fff;
+}
+
+.VPNavBarAppearance, .VPNavScreenAppearance {
+  display: none !important;
+}
+
+.DocSearch-Button:hover {
+  border: 1px solid hsl(0 0% 14%);
+}
