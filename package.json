@@ -37,23 +37,27 @@
     "dev": "vite",
     "build": "vue-tsc -b ./tsconfig.lib.json && vite build",
     "preview": "vite preview",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
     "reka-ui": "^2.2.1",
     "vue-remove-scroll": "^1.0.2"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.1.8",
     "@types/node": "^22.15.29",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/tsconfig": "^0.7.0",
+    "tailwindcss": "^4.1.8",
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
     "vite-plugin-dts": "^4.5.4",
     "vite-plugin-lib-inject-css": "^2.2.2",
-    "vue-tsc": "^2.2.8",
-    "@tailwindcss/vite": "^4.1.8",
-    "tailwindcss": "^4.1.8"
+    "vitepress": "^1.6.3",
+    "vue-tsc": "^2.2.8"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
