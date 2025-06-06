@@ -43,4 +43,13 @@ export default defineConfig({
       copyright: 'Copyright © 2025-present Geist'
     }
   },
+  head: [
+    ['meta', { name: 'theme-color', content: '#000' }],
+    ['link', { rel: 'icon', href: '/favicon.ico', type: "image/x-icon" }],
+    ['meta', { name: 'author', content: 'David Bender' }],
+    ['meta', { property: 'og:title', content: 'Vue Vaul' }],
+    ['meta', { property: 'og:description', content: 'Vue Vaul: A drawer component for Vue' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0, viewport-fit=cover' }],
+  ],
 })
