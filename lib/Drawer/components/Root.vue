@@ -20,9 +20,7 @@ import {
   VELOCITY_THRESHOLD,
   CLOSE_THRESHOLD,
   SCROLL_LOCK_TIMEOUT,
-  BORDER_RADIUS,
   NESTED_DISPLACEMENT,
-  WINDOW_TOP_OFFSET,
   DRAG_CLASS,
 } from '../constants.ts';
 
@@ -61,26 +59,12 @@ export type DialogProps = {
    * @default 0.25
    */
   closeThreshold?: number;
-  /**
-   * When `true` the `body` doesn't get any styles assigned from Vaul
-   */
-  noBodyStyles?: boolean;
   onOpenChange?: (open: boolean) => void;
-  shouldScaleBackground?: boolean;
-  /**
-   * When `false` we don't change body's background color when the drawer is open.
-   * @default true
-   */
-  setBackgroundColorOnScale?: boolean;
   /**
    * Duration for which the drawer is not draggable after scrolling content inside of the drawer.
    * @default 500ms
    */
   scrollLockTimeout?: number;
-  /**
-   * When `true`, don't move the drawer upwards if there's space, but rather only change it's height so it's fully scrollable when the keyboard is open
-   */
-  fixed?: boolean;
   /**
    * When `true` only allows the drawer to be dragged by the `<Drawer.Handle />` component.
    * @default false
@@ -112,17 +96,6 @@ export type DialogProps = {
    */
   defaultOpen?: boolean;
   /**
-   * When set to `true` prevents scrolling on the document body on mount, and restores it on unmount.
-   * @default false
-   */
-  disablePreventScroll?: boolean;
-  /**
-   * When `true` Vaul will reposition inputs rather than scroll then into view if the keyboard is in the way.
-   * Setting it to `false` will fall back to the default browser behavior.
-   * @default true when {@link snapPoints} is defined
-   */
-  repositionInputs?: boolean;
-  /**
    * Disabled velocity based swiping for snap points.
    * This means that a snap point won't be skipped even if the velocity is high enough.
    * Useful if each snap point in a drawer is equally important.
@@ -135,7 +108,6 @@ export type DialogProps = {
    * Useful to revert any state changes for example.
    */
   onAnimationEnd?: (open: boolean) => void;
-  preventScrollRestoration?: boolean;
   autoFocus?: boolean;
 } & (WithFadeFromProps | WithoutFadeFromProps);
 
@@ -146,8 +118,6 @@ const {
   onDrag: onDragProp,
   onRelease: onReleaseProp,
   snapPoints,
-  shouldScaleBackground = false,
-  setBackgroundColorOnScale = true,
   closeThreshold = CLOSE_THRESHOLD,
   scrollLockTimeout = SCROLL_LOCK_TIMEOUT,
   dismissible = true,
@@ -156,7 +126,6 @@ const {
   setActiveSnapPoint: setActiveSnapPointProp,
   modal = true,
   onClose,
-  noBodyStyles = false,
   direction = 'bottom',
   defaultOpen = false,
   snapToSequentialPoint = false,
@@ -301,16 +270,9 @@ provide('drawerContext', {
   snapPointsOffset,
   activeSnapPointIndex,
   direction,
-  shouldScaleBackground,
-  setBackgroundColorOnScale,
-  noBodyStyles,
   container,
   autoFocus,
 })
-
-function getScale() {
-  return (window.innerWidth - WINDOW_TOP_OFFSET) / window.innerWidth;
-}
 
 function onPress(event: PointerEvent) {
   if (!dismissible && !snapPoints) return;
@@ -426,7 +388,6 @@ function onDrag(event: PointerEvent) {
 
     // We need to capture last time when drag with scroll was triggered and have a timeout between
     const absDraggedDistance = Math.abs(draggedDistance);
-    const wrapper = document.querySelector('[data-vaul-drawer-wrapper]');
     const drawerDimension =
       direction === 'bottom' || direction === 'top' ? drawerHeightRef.value : drawerWidthRef.value;
 
@@ -489,26 +450,6 @@ function onDrag(event: PointerEvent) {
       );
     }
 
-    if (wrapper && overlayRef.value && shouldScaleBackground) {
-      // Calculate percentageDragged as a fraction (0 to 1)
-      const scaleValue = Math.min(getScale() + percentageDragged * (1 - getScale()), 1);
-      const borderRadiusValue = 8 - percentageDragged * 8;
-
-      const translateValue = Math.max(0, 14 - percentageDragged * 14);
-
-      set(
-        wrapper,
-        {
-          borderRadius: `${borderRadiusValue}px`,
-          transform: isVertical(direction)
-            ? `scale(${scaleValue}) translate3d(0, ${translateValue}px, 0)`
-            : `scale(${scaleValue}) translate3d(${translateValue}px, 0, 0)`,
-          transition: 'none',
-        },
-        true,
-      );
-    }
-
     if (!snapPoints) {
       const translateValue = absDraggedDistance * directionMultiplier;
 
@@ -536,10 +477,9 @@ function closeDrawer(fromWithin?: boolean) {
   }, TRANSITIONS.DURATION * 1000); // seconds to ms
 }
 
+
 function resetDrawer() {
   if (!drawerRef.value) return;
-  const wrapper = document.querySelector('[data-vaul-drawer-wrapper]');
-  const currentSwipeAmount = getTranslate(drawerRef.value.$el, direction);
 
   set(drawerRef.value.$el, {
     transform: 'translate3d(0, 0, 0)',
@@ -550,30 +490,6 @@ function resetDrawer() {
     transition: `opacity ${TRANSITIONS.DURATION}s cubic-bezier(${TRANSITIONS.EASE.join(',')})`,
     opacity: '1',
   });
-
-  // Don't reset background if swiped upwards
-  if (shouldScaleBackground && currentSwipeAmount && currentSwipeAmount > 0 && isOpen.value) {
-    set(
-      wrapper,
-      {
-        borderRadius: `${BORDER_RADIUS}px`,
-        overflow: 'hidden',
-        ...(isVertical(direction)
-          ? {
-              transform: `scale(${getScale()}) translate3d(0, calc(env(safe-area-inset-top) + 14px), 0)`,
-              transformOrigin: 'top',
-            }
-          : {
-              transform: `scale(${getScale()}) translate3d(calc(env(safe-area-inset-top) + 14px), 0, 0)`,
-              transformOrigin: 'left',
-            }),
-        transitionProperty: 'transform, border-radius',
-        transitionDuration: `${TRANSITIONS.DURATION}s`,
-        transitionTimingFunction: `cubic-bezier(${TRANSITIONS.EASE.join(',')})`,
-      },
-      true,
-    );
-  }
 }
 
 function cancelDrag() {

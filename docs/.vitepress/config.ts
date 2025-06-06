@@ -8,23 +8,35 @@ export default defineConfig({
   markdown: {
     theme: geistTheme
   },
+  cleanUrls: true,
+  appearance: 'force-dark',
   themeConfig: {
-    // logo: '/site-logo.svg',
+    editLink: {
+      pattern: 'https://github.com/dbzx10299/vue-vaul/edit/main/docs/:path',
+      text: 'Suggest changes to this page',
+    },
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'API', link: '/api' },
+      { text: 'Docs', link: '/getting-started' }
     ],
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Basics',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Getting Started', link: '/getting-started' },
+          { text: 'API', link: '/api' }
+        ]
+      },
+      {
+        text: 'Drawer',
+        items: [
+          { text: 'Examples', link: '/examples' }
         ]
       }
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/dbzx10299/vue-vaul' }
+      { icon: 'github', link: 'https://github.com/dbzx10299/vue-vaul' },
+      { icon: 'npm', link: 'https://www.npmjs.com/package/vue-vaul' }
     ],
     footer: {
       message: 'Released under the MIT License.',

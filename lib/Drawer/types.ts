@@ -33,9 +33,7 @@ export interface DrawerContext {
   openProp?: boolean;
   onOpenChange?: (o: boolean) => void;
   direction: DrawerDirection;
-  shouldScaleBackground: boolean;
   setBackgroundColorOnScale: boolean;
-  noBodyStyles: boolean;
   handleOnly?: boolean;
   container?: HTMLElement | null;
   autoFocus?: boolean;

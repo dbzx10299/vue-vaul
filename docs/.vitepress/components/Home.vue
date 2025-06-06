@@ -1,5 +1,5 @@
 <script setup>
-import DefaultDrawer from './DefaultDrawer.vue'
+import DefaultDrawer from './Drawer/DefaultDrawer.vue'
 </script>
 
 <template>
@@ -9,7 +9,7 @@ import DefaultDrawer from './DefaultDrawer.vue'
       <h1>Vue Vaul</h1>
       <p>Drawer component for Vue.</p>
       <DefaultDrawer/>
-      <a href="/markdown-examples">Documentation</a>
+      <a href="/getting-started">Documentation</a>
     </div>
   </div>
 </template>
@@ -44,7 +44,7 @@ svg {
   height: 100%;
   width: 100%;
   inset: 0;
-  stroke: hsl(0 0% 18%);
+  stroke: hsl(0 0% 12%);
   max-width: 100%;
 }
 
