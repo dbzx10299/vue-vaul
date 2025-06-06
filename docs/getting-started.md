@@ -8,6 +8,12 @@ Vue Vaul is a port of [Vaul](https://github.com/emilkowalski/vaul) which was ori
 npm i vue-vaul
 ```
 
+## Usage with Tailwind CSS
+
+Vaul is an unstyled drawer component, the examples shown in these docs have styles applied using the `@tailwindcss/vite` Vite plugin, but the drawer can be styled with regular CSS.
+
+Make sure to read the docs for [setting up Tailwind CSS with Vite](https://tailwindcss.com/docs/installation/using-vite).
+
 ## Create a Drawer component
 
 ```vue
