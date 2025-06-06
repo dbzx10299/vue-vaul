@@ -782,6 +782,8 @@ import { Drawer } from 'vue-vaul'
 
 ## Default Drawer
 
+The most basic setup for a drawer.
+
 <CodePreview
   :code="defaultDrawer"
   lang="vue"
@@ -792,6 +794,8 @@ import { Drawer } from 'vue-vaul'
 </CodePreview>
 
 ## Scrollable Drawer
+
+A scrollable drawer. The behavior here mimics Apple's Sheet component.
 
 <CodePreview
   :code="scrollDrawer"
@@ -804,6 +808,8 @@ import { Drawer } from 'vue-vaul'
 
 ## Snap Drawer
 
+A way to define a set of points that the drawer can snap to during a drag operation. This means that a drawer no longer only has to be open or closed, but can also be partially open.
+
 <CodePreview
   :code="snapDrawer"
   lang="vue"
@@ -814,6 +820,8 @@ import { Drawer } from 'vue-vaul'
 </CodePreview>
 
 ## Snap To Sequential Point
+
+Disable velocity-based snapping by using `snapToSequentialPoint` prop. This means that a snap point won't be skipped even if the velocity is high enough. Useful if each snap point in a drawer is equally important.
 
 <CodePreview
   :code="snapToSequentialPointDrawer"
@@ -826,6 +834,8 @@ import { Drawer } from 'vue-vaul'
 
 ## Custom Fade Index
 
+Use the `fadeFromIndex` prop to specify the snap point index from which the drawer should start fading. It defaults to the last point, but in the demo below we change it to the second point.
+
 <CodePreview
   :code="customFadeFromIndexDrawer"
   lang="vue"
@@ -836,6 +846,8 @@ import { Drawer } from 'vue-vaul'
 </CodePreview>
 
 ## Non Modal
+
+Set the `modal` prop to `false` to allow interaction with the background while the drawer is open.
 
 <CodePreview
   :code="nonModalDrawer"
@@ -848,6 +860,8 @@ import { Drawer } from 'vue-vaul'
 
 ## Non Dismissible
 
+Set the `dismissible` prop to `false` to prevent the user from closing the drawer by clicking outside of it, pressing the escape key, or dragging it down.
+
 <CodePreview
   :code="nonDismissibleDrawer"
   lang="vue"
@@ -859,6 +873,8 @@ import { Drawer } from 'vue-vaul'
 
 ## Controlled Drawer
 
+You can use the open prop to programmatically open or close the drawer. You can also pass the onOpenChange prop which will be called when the open state of the dialog changes, it's useful if you want to react to esc/outside clicks when controlled.
+
 <CodePreview
   :code="controlledDrawer"
   lang="vue"
@@ -868,7 +884,9 @@ import { Drawer } from 'vue-vaul'
   </template>
 </CodePreview>
 
-## Nested Drawer
+## Nested Drawers
+
+Nest drawers inside each other.
 
 <CodePreview
   :code="nestedDrawer"
@@ -880,6 +898,8 @@ import { Drawer } from 'vue-vaul'
 </CodePreview>
 
 ## Side Drawer
+
+Set the direction prop to "right" or "left" to change the position of the drawer. Use the --initial-transform CSS variable to adjust the animation, useful when the drawer does not touch the edge of the screen (like in this case).
 
 <CodePreview
   :code="sideDrawer"
