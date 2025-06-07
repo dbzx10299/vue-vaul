@@ -1,33 +1,37 @@
+# Geist Vaul
 
-# API Reference
+Geist Vaul is the same drawer as Vue Vaul but more lightweight and with less options.  Compared with Vue Vaul, Geist Vaul does not have the option to nest drawers, does not support snap points, and does not support different directions.
+
+## Installation
+
+```sh
+npm i geist-vaul
+```
+
+## Create a Drawer component
+
+```vue
+<script setup>
+import { Drawer } from 'geist-vaul'
+</script>
+
+<template>
+  <Drawer.Root>
+    <Drawer.Trigger>Open Drawer</Drawer.Trigger>
+    <Drawer.Portal>
+      <Drawer.Overlay class="fixed inset-0 bg-black/40" />
+      <Drawer.Content class="bg-gray-100 h-fit fixed bottom-0 left-0 right-0 outline-none">
+        <div class="p-4 bg-white"><!-- content --></div>
+      </Drawer.Content>
+    </Drawer.Portal>
+  </Drawer.Root>
+</template>
+```
+
+## API
 
 ```ts
-interface WithFadeFromProps {
-  /**
-   * Array of numbers from 0 to 100 that corresponds to % of the screen a given snap point should take up.
-   * Should go from least visible. Example `[0.2, 0.5, 0.8]`.
-   * You can also use px values, which doesn't take screen height into account.
-   */
-  snapPoints: (number | string)[];
-  /**
-   * Index of a `snapPoint` from which the overlay fade should be applied. Defaults to the last snap point.
-   */
-  fadeFromIndex: number;
-}
-
-interface WithoutFadeFromProps {
-  /**
-   * Array of numbers from 0 to 100 that corresponds to % of the screen a given snap point should take up.
-   * Should go from least visible. Example `[0.2, 0.5, 0.8]`.
-   * You can also use px values, which doesn't take screen height into account.
-   */
-  snapPoints?: (number | string)[];
-  fadeFromIndex?: never;
-}
-
 type DialogProps = {
-  activeSnapPoint?: number | string | null;
-  setActiveSnapPoint?: (snapPoint: number | string | null) => void;
   open?: boolean;
   /**
    * Number between 0 and 1 that determines when the drawer should be closed.
@@ -59,30 +63,17 @@ type DialogProps = {
    * @default true
    */
   modal?: boolean;
-  nested?: boolean;
   onClose?: () => void;
-  /**
-   * Direction of the drawer. Can be `top` or `bottom`, `left`, `right`.
-   * @default 'bottom'
-   */
-  direction?: 'top' | 'bottom' | 'left' | 'right';
   /**
    * Opened by default, skips initial enter animation. Still reacts to `open` state changes
    * @default false
    */
   defaultOpen?: boolean;
   /**
-   * Disabled velocity based swiping for snap points.
-   * This means that a snap point won't be skipped even if the velocity is high enough.
-   * Useful if each snap point in a drawer is equally important.
-   * @default false
-   */
-  snapToSequentialPoint?: boolean;
-  /**
    * Gets triggered after the open or close animation ends, it receives an `open` argument with the `open` state of the drawer by the time the function was triggered.
    * Useful to revert any state changes for example.
    */
   onAnimationEnd?: (open: boolean) => void;
   autoFocus?: boolean;
-} & (WithFadeFromProps | WithoutFadeFromProps);
+}
 ```

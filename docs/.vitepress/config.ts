@@ -32,6 +32,12 @@ export default defineConfig({
         items: [
           { text: 'Examples', link: '/examples' }
         ]
+      },
+      {
+        text: 'Minimal Drawer',
+        items: [
+          { text: 'Geist Vaul', link: '/geist-vaul' }
+        ]
       }
     ],
     socialLinks: [
