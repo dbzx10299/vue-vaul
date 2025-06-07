@@ -5,7 +5,7 @@ import postcssMediaMinMax from 'postcss-media-minmax'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    tailwindcss(),
+    tailwindcss()
   ],
   css: {
     devSourcemap: true,
