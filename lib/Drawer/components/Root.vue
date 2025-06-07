@@ -102,7 +102,6 @@ export type DialogProps = {
    * @default false
    */
   snapToSequentialPoint?: boolean;
-  container?: Ref<HTMLElement | null>;
   /**
    * Gets triggered after the open or close animation ends, it receives an `open` argument with the `open` state of the drawer by the time the function was triggered.
    * Useful to revert any state changes for example.
@@ -130,7 +129,6 @@ const {
   defaultOpen = false,
   snapToSequentialPoint = false,
   onAnimationEnd,
-  container,
   autoFocus = false,
   activeSnapPoint: activeSnapPointProp,
   nested: _nested,
@@ -239,7 +237,6 @@ const {
   overlayRef,
   onSnapPointChange,
   direction,
-  container,
   snapToSequentialPoint,
 });
 
@@ -269,7 +266,6 @@ provide('drawerContext', {
   snapPointsOffset,
   activeSnapPointIndex,
   direction,
-  container,
   autoFocus,
 })
 

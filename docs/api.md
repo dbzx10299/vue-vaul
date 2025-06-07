@@ -78,7 +78,6 @@ export type DialogProps = {
    * @default false
    */
   snapToSequentialPoint?: boolean;
-  container?: Ref<HTMLElement | null>;
   /**
    * Gets triggered after the open or close animation ends, it receives an `open` argument with the `open` state of the drawer by the time the function was triggered.
    * Useful to revert any state changes for example.

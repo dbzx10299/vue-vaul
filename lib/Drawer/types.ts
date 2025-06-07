@@ -35,7 +35,6 @@ export interface DrawerContext {
   direction: DrawerDirection;
   setBackgroundColorOnScale: boolean;
   handleOnly?: boolean;
-  container?: HTMLElement | null;
   autoFocus?: boolean;
   shouldAnimate?: Ref<boolean>;
 }

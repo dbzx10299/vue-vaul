@@ -14,7 +14,6 @@ export function useSnapPoints({
   fadeFromIndex,
   onSnapPointChange,
   direction = 'bottom',
-  container,
   snapToSequentialPoint,
 }: {
   activeSnapPointProp?: Ref<number | string | null>;
@@ -25,7 +24,6 @@ export function useSnapPoints({
   overlayRef: Ref<ComponentPublicInstance | null>;
   onSnapPointChange(activeSnapPointIndex: number): void;
   direction?: DrawerDirection;
-  container?: Ref<HTMLElement | null | undefined>;
   snapToSequentialPoint?: boolean;
 }) {
 
@@ -79,9 +77,7 @@ export function useSnapPoints({
   )
 
   const snapPointsOffset = computed(() => {
-    const containerSize = container?.value
-      ? { width: container.value?.getBoundingClientRect().width, height: container.value?.getBoundingClientRect().height }
-      : typeof window !== 'undefined'
+    const containerSize = typeof window !== 'undefined'
       ? { width: window.innerWidth, height: window.innerHeight }
       : { width: 0, height: 0 };
 

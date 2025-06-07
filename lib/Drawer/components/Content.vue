@@ -26,7 +26,6 @@ const {
   isOpen,
   direction,
   snapPoints,
-  container,
   handleOnly,
   shouldAnimate,
   autoFocus,
@@ -85,7 +84,6 @@ function handleOnPointerUp(event: PointerEvent | null) {
     data-vaul-drawer=""
     :data-vaul-delayed-snap-points="delayedSnapPoints ? 'true' : 'false'"
     :data-vaul-snap-points="isOpen && hasSnapPoints ? 'true' : 'false'"
-    :data-vaul-custom-container="container ? 'true' : 'false'"
     :data-vaul-animate="shouldAnimate ? 'true' : 'false'"
     ref="drawerRef"
     :style="{
