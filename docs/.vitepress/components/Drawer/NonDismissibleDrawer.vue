@@ -9,7 +9,7 @@ const isOpen = ref(false)
 <template>
   <Drawer.Root :dismissible="false" :open="isOpen" :onOpenChange="open => (isOpen = open)">
     <Drawer.Trigger data-trigger class="relative flex h-10 flex-shrink-0 items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-4 text-sm font-medium shadow-sm transition-all hover:bg-[#FAFAFA] dark:bg-[#161615] dark:hover:bg-[#1A1A19] dark:text-white">
-      Open Drawer
+      Open
     </Drawer.Trigger>
     <Drawer.Portal>
       <Drawer.Overlay data-overlay class="fixed inset-0 bg-black/40" />

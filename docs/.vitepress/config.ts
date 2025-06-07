@@ -45,7 +45,7 @@ export default defineConfig({
   },
   head: [
     ['meta', { name: 'theme-color', content: '#000' }],
-    ['link', { rel: 'icon', href: '/favicon.ico', type: "image/x-icon" }],
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'author', content: 'David Bender' }],
     ['meta', { property: 'og:title', content: 'Vue Vaul' }],
     ['meta', { property: 'og:description', content: 'Vue Vaul: A drawer component for Vue' }],

@@ -6,7 +6,7 @@ import './drawer.css'
 <template>
   <Drawer.Root>
     <Drawer.Trigger data-trigger class="trigger relative flex h-10 flex-shrink-0 items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-4 text-sm font-medium shadow-sm transition-all hover:bg-[#FAFAFA] dark:bg-[#161615] dark:hover:bg-[#1A1A19] dark:text-white">
-      Open Drawer
+      Open
     </Drawer.Trigger>
     <Drawer.Portal>
       <Drawer.Overlay data-overlay class="fixed inset-0 bg-black/40 z-9999"/>
@@ -23,7 +23,7 @@ import './drawer.css'
               But there is this gap. For the first couple years you make stuff, it’s just not that good. It’s trying
               to be good, it has potential, but it’s not. But your taste, the thing that got you into the game, is
               still killer. And your taste is why your work disappoints you. A lot of people never get past this
-              phase, they quit.{' '}
+              phase, they quit.
             </p>
             <p class="color-[#ededed]">
               Most people I know who do interesting, creative work went through years of this. We know our work

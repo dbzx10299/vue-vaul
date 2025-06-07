@@ -198,7 +198,6 @@ const isOpen = computed({
   }
 })
 
-
 const hasBeenOpened = ref<boolean>(false);
 const isDragging = ref<boolean>(false);
 const justReleased = ref<boolean>(false);

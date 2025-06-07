@@ -6,7 +6,7 @@ import './drawer.css'
 <template>
   <Drawer.Root>
     <Drawer.Trigger data-trigger>
-      Open Drawer
+      Open
     </Drawer.Trigger>
     <Drawer.Portal>
       <Drawer.Overlay data-overlay class="fixed inset-0 bg-black/40 z-9999"/>

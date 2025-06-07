@@ -73,7 +73,7 @@ import { Drawer } from 'vue-vaul'
               But there is this gap. For the first couple years you make stuff, it’s just not that good. It’s trying
               to be good, it has potential, but it’s not. But your taste, the thing that got you into the game, is
               still killer. And your taste is why your work disappoints you. A lot of people never get past this
-              phase, they quit.{' '}
+              phase, they quit.
             </p>
             <p class="text-gray-600">
               Most people I know who do interesting, creative work went through years of this. We know our work
