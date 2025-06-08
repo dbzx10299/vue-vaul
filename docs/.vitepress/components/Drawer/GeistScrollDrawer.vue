@@ -13,7 +13,7 @@ import './drawer.css'
       <Drawer.Content data-content class="z-9999 bg-[#0a0a0a] flex flex-col rounded-t-[10px] mt-24 h-[80%] lg:h-[320px] fixed bottom-0 left-0 right-0 outline-none">
         <div class="new-dialog_inner">
           <div class="modal-body">
-            <div>
+            <div class="max-w-md mx-auto">
               <Drawer.Title class="font-mSdium m-4 color-[#ededed]" style="font-weight: 600; font-size: 18px; margin: 24px 0;">Create Token</Drawer.Title>
               <p class="color-[#ededed]">Some content contained within the modal.</p>
               <p class="color-[#ededed]">Some content contained within the modal.</p>
