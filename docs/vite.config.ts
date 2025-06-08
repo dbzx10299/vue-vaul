@@ -4,6 +4,9 @@ import postcssMediaMinMax from 'postcss-media-minmax'
 
 // https://vite.dev/config/
 export default defineConfig({
+  ssr: {
+    noExternal: ['geist-vaul']
+  },
   plugins: [
     tailwindcss()
   ],

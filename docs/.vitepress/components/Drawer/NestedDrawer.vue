@@ -34,7 +34,7 @@ import './drawer.css'
                 <Drawer.Overlay data-overlay class="fixed inset-0 bg-black/40" />
                 <Drawer.Content data-content class="bg-[#0a0a0a] flex flex-col rounded-t-[10px] lg:h-[327px] h-full mt-24 max-h-[94%] fixed bottom-0 left-0 right-0">
                   <div class="p-4 bg-[#0a0a0a] rounded-t-[10px] flex-1">
-                    <div class="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-gray-300 mb-8" />
+                    <div class="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-[#222] mb-8" />
                     <div class="max-w-md mx-auto">
                       <Drawer.Title class="font-medium mb-4 text-gray-100">This drawer is nested.</Drawer.Title>
                       <p class="color-[#ededed] mb-2">

@@ -1,7 +1,7 @@
 <script setup>
 import CodePreview from './.vitepress/components/CodePreview.vue'
-import DefaultDrawer from './.vitepress/components/Drawer/DefaultDrawer.vue'
-import ScrollDrawer from './.vitepress/components/Drawer/ScrollDrawer.vue'
+import GeistDefaultDrawer from './.vitepress/components/Drawer/GeistDefaultDrawer.vue'
+import GeistScrollDrawer from './.vitepress/components/Drawer/GeistScrollDrawer.vue'
 
 const defaultDrawer = `
 <script setup lang=\"ts\">
@@ -179,7 +179,7 @@ The most basic setup for a drawer.
   lang="vue"
 >
   <template #preview>
-    <DefaultDrawer/>
+    <GeistDefaultDrawer/>
   </template>
 </CodePreview>
 
@@ -192,6 +192,6 @@ A scrollable drawer. The behavior here mimics Apple's Sheet component.
   lang="vue"
 >
   <template #preview>
-    <ScrollDrawer/>
+    <GeistScrollDrawer/>
   </template>
 </CodePreview>
