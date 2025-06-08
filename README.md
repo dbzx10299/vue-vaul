@@ -2,6 +2,8 @@
 
 A Vue drawer component ported from [Vaul](https://github.com/emilkowalski/vaul).
 
+For a lightweight version with minimal options, see [Geist Vaul](https://www.npmjs.com/package/geist-vaul).
+
 ## Install
 
 ```bash
