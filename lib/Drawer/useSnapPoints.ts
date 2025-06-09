@@ -22,7 +22,7 @@ export function useSnapPoints({
   fadeFromIndex?: number;
   drawerRef: Ref<ComponentPublicInstance | null>;
   overlayRef: Ref<ComponentPublicInstance | null>;
-  onSnapPointChange(activeSnapPointIndex: number): void;
+  onSnapPointChange(activeSnapPointIndex: number, snapPointsOffset: number[]): void;
   direction?: DrawerDirection;
   snapToSequentialPoint?: boolean;
 }) {
@@ -67,14 +67,13 @@ export function useSnapPoints({
 
   const activeSnapPointIndex = computed(() => snapPoints?.findIndex((snapPoint) => snapPoint === activeSnapPoint.value) ?? null)
 
-  const shouldFade = computed(() => (
+  const shouldFade =
     (snapPoints &&
     snapPoints.length > 0 &&
     (fadeFromIndex || fadeFromIndex === 0) &&
     !Number.isNaN(fadeFromIndex) &&
     snapPoints[fadeFromIndex] === activeSnapPoint.value
-    ) || !snapPoints)
-  )
+    ) || !snapPoints
 
   const snapPointsOffset = computed(() => {
     const containerSize = typeof window !== 'undefined'
@@ -116,7 +115,7 @@ export function useSnapPoints({
 
   const snapToPoint = (dimension: number) => {
     const newSnapPointIndex = snapPointsOffset.value?.findIndex((snapPointDim) => snapPointDim === dimension) ?? null;
-    onSnapPointChange(newSnapPointIndex);
+    onSnapPointChange(newSnapPointIndex, snapPointsOffset.value);
 
     set(drawerRef.value?.$el, {
       transition: `transform ${TRANSITIONS.DURATION}s cubic-bezier(${TRANSITIONS.EASE.join(',')})`,
@@ -257,7 +256,7 @@ export function useSnapPoints({
 
     // Don't animate, but still use this one if we are dragging away from the overlaySnapPoint
     if (isOverlaySnapPoint && !isDraggingDown) return 1;
-    if (!shouldFade.value && !isOverlaySnapPoint) return null;
+    if (!shouldFade && !isOverlaySnapPoint) return null;
 
     // Either fadeFrom index or the one before
     const targetSnapPointIndex = isOverlaySnapPoint ? activeSnapPointIndex.value + 1 : activeSnapPointIndex.value - 1;

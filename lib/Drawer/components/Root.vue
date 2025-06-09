@@ -213,18 +213,11 @@ const drawerRef = ref<ComponentPublicInstance | null>(null);
 const drawerHeightRef = ref(drawerRef.value?.$el.getBoundingClientRect().height || 0);
 const drawerWidthRef = ref(drawerRef.value?.$el.getBoundingClientRect().width || 0);
 
-let snapPointsOffset: ComputedRef<number[]>
-
-const onSnapPointChange = (activeSnapPointIndex: number) => {
-  // Change openTime ref when we reach the last snap point to prevent dragging for 500ms incase it's scrollable.
-  if (snapPoints && activeSnapPointIndex === snapPointsOffset?.value?.length - 1) openTime.value = new Date();
-}
-
 const {
   activeSnapPoint,
   activeSnapPointIndex,
   onRelease: onReleaseSnapPoints,
-  snapPointsOffset: _snapPointsOffset,
+  snapPointsOffset,
   onDrag: onDragSnapPoints,
   shouldFade,
   getPercentageDragged: getSnapPointsPercentageDragged,
@@ -240,7 +233,11 @@ const {
   snapToSequentialPoint,
 });
 
-snapPointsOffset = _snapPointsOffset
+function onSnapPointChange(activeSnapPointIndex: number, snapPointsOffset: number[]) {
+  if (snapPoints && activeSnapPointIndex === snapPointsOffset.length - 1) {
+    openTime.value = new Date()
+  }
+}
 
 provide('drawerContext', {
   activeSnapPoint,
@@ -432,7 +429,7 @@ function onDrag(event: PointerEvent) {
 
     const opacityValue = 1 - percentageDragged;
 
-    if (shouldFade.value || (fadeFromIndex && activeSnapPointIndex.value === fadeFromIndex - 1)) {
+    if (shouldFade || (fadeFromIndex && activeSnapPointIndex.value === fadeFromIndex - 1)) {
       onDragProp?.(event, percentageDragged);
 
       set(

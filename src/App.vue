@@ -6,5 +6,5 @@ import NestedDrawer from './components/NestedDrawer.vue'
 </script>
 
 <template>
-  <DefaultDrawer/>
+  <SnapDrawer/>
 </template>

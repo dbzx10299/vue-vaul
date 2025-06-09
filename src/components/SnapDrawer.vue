@@ -8,7 +8,12 @@ const snap = ref<string | number | null>(snapPoints[0])
 </script>
 
 <template>
-  <Drawer.Root :snapPoints :activeSnapPoint="snap" :setActiveSnapPoint="snapPoint => (snap = snapPoint)">
+  <Drawer.Root
+    :snapPoints
+    :activeSnapPoint="snap"
+    :setActiveSnapPoint="snapPoint => (snap = snapPoint)"
+    :fadeFromIndex="1"
+  >
     <Drawer.Trigger class="relative flex h-10 flex-shrink-0 items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-4 text-sm font-medium shadow-sm transition-all hover:bg-[#FAFAFA] dark:bg-[#161615] dark:hover:bg-[#1A1A19] dark:text-white">
       Open Drawer
     </Drawer.Trigger>
