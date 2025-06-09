@@ -1,4 +1,4 @@
-import { ref, computed, onBeforeUnmount, onMounted, watchEffect } from 'vue'
+import { ref, computed, onBeforeUnmount, onMounted, watch } from 'vue'
 import type { Ref, ComponentPublicInstance } from 'vue'
 
 import { set, isVertical } from './helpers.ts';
@@ -15,6 +15,7 @@ export function useSnapPoints({
   onSnapPointChange,
   direction = 'bottom',
   snapToSequentialPoint,
+  isOpen
 }: {
   activeSnapPointProp?: Ref<number | string | null>;
   setActiveSnapPointProp?(snapPoint: number | null | string): void;
@@ -25,8 +26,9 @@ export function useSnapPoints({
   onSnapPointChange(activeSnapPointIndex: number, snapPointsOffset: number[]): void;
   direction?: DrawerDirection;
   snapToSequentialPoint?: boolean;
+  isOpen: Ref<boolean>;
 }) {
-
+  
   const _activeSnapPoint = ref(snapPoints?.[0] ?? null)
 
   const activeSnapPoint = computed({
@@ -143,16 +145,17 @@ export function useSnapPoints({
     activeSnapPoint.value = snapPoints?.[Math.max(newSnapPointIndex, 0)] ?? null
   }
 
-  watchEffect(() => {
+  watch([activeSnapPoint, activeSnapPointProp, snapPointsOffset, isOpen], () => {
     if (activeSnapPoint.value || activeSnapPointProp?.value) {
       const newIndex =
         snapPoints?.findIndex((snapPoint) => snapPoint === activeSnapPointProp?.value || snapPoint === activeSnapPoint.value) ?? -1;
       if (snapPointsOffset.value && newIndex !== -1 && typeof snapPointsOffset.value[newIndex] === 'number') {
         snapToPoint(snapPointsOffset.value[newIndex] as number);
       }
-    }
+        }
+  }, {
+    immediate: true
   })
-
 
   function onRelease({
     draggedDistance,

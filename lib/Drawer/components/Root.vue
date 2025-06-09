@@ -213,6 +213,7 @@ const drawerRef = ref<ComponentPublicInstance | null>(null);
 const drawerHeightRef = ref(drawerRef.value?.$el.getBoundingClientRect().height || 0);
 const drawerWidthRef = ref(drawerRef.value?.$el.getBoundingClientRect().width || 0);
 
+
 const {
   activeSnapPoint,
   activeSnapPointIndex,
@@ -220,7 +221,7 @@ const {
   snapPointsOffset,
   onDrag: onDragSnapPoints,
   shouldFade,
-  getPercentageDragged: getSnapPointsPercentageDragged,
+  getPercentageDragged: getSnapPointsPercentageDragged
 } = useSnapPoints({
   snapPoints,
   activeSnapPointProp: toRef(() => activeSnapPointProp) as Ref<number | string | null>,
@@ -231,6 +232,7 @@ const {
   onSnapPointChange,
   direction,
   snapToSequentialPoint,
+  isOpen
 });
 
 function onSnapPointChange(activeSnapPointIndex: number, snapPointsOffset: number[]) {
