@@ -431,7 +431,7 @@ function onDrag(event: PointerEvent) {
 
     const opacityValue = 1 - percentageDragged;
 
-    if (shouldFade || (fadeFromIndex && activeSnapPointIndex.value === fadeFromIndex - 1)) {
+    if (shouldFade.value || (fadeFromIndex && activeSnapPointIndex.value === fadeFromIndex - 1)) {
       onDragProp?.(event, percentageDragged);
 
       set(

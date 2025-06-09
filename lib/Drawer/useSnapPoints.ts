@@ -69,13 +69,14 @@ export function useSnapPoints({
 
   const activeSnapPointIndex = computed(() => snapPoints?.findIndex((snapPoint) => snapPoint === activeSnapPoint.value) ?? null)
 
-  const shouldFade =
+  const shouldFade = computed(() => (
     (snapPoints &&
     snapPoints.length > 0 &&
     (fadeFromIndex || fadeFromIndex === 0) &&
     !Number.isNaN(fadeFromIndex) &&
     snapPoints[fadeFromIndex] === activeSnapPoint.value
-    ) || !snapPoints
+    ) || !snapPoints)
+  )
 
   const snapPointsOffset = computed(() => {
     const containerSize = typeof window !== 'undefined'
@@ -259,7 +260,7 @@ export function useSnapPoints({
 
     // Don't animate, but still use this one if we are dragging away from the overlaySnapPoint
     if (isOverlaySnapPoint && !isDraggingDown) return 1;
-    if (!shouldFade && !isOverlaySnapPoint) return null;
+    if (!shouldFade.value && !isOverlaySnapPoint) return null;
 
     // Either fadeFrom index or the one before
     const targetSnapPointIndex = isOverlaySnapPoint ? activeSnapPointIndex.value + 1 : activeSnapPointIndex.value - 1;
