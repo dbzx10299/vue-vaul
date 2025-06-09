@@ -10,7 +10,7 @@ import {
   toRef,
 } from 'vue'
 
-import type { Ref, ComponentPublicInstance, ComputedRef } from 'vue';
+import type { Ref, ComponentPublicInstance } from 'vue';
 
 import '../style.css';
 import { useSnapPoints } from '../useSnapPoints.ts';
