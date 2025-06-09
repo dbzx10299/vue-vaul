@@ -899,7 +899,7 @@ Nest drawers inside each other.
 
 ## Side Drawer
 
-Set the direction prop to "right" or "left" to change the position of the drawer. Use the --initial-transform CSS variable to adjust the animation, useful when the drawer does not touch the edge of the screen (like in this case).
+Set the direction prop to "right" or "left" to change the position of the drawer. Use the `--initial-transform` CSS variable to adjust the animation, useful when the drawer does not touch the edge of the screen (like in this case).
 
 <CodePreview
   :code="sideDrawer"
