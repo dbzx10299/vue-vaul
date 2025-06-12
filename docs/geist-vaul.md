@@ -118,7 +118,7 @@ import { Drawer } from 'geist-vaul'
 </template>
 ```
 
-## API
+## API Reference
 
 ```ts
 type DialogProps = {
