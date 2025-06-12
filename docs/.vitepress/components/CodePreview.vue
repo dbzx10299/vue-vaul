@@ -1,19 +1,39 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { codeToHtml } from 'shiki'
+import { codeToHtml, addClassToHast } from 'shiki'
+// import { createCssVariablesTheme } from 'shiki/core'
 import { geistTheme } from '../geist-theme.ts'
 
-const { code, lang } = defineProps<{code?: string; lang?: string }>()
+const { code, lang, highlights } = defineProps<{code?: string; lang?: string, highlights?: number[] }>()
+
+// const cssVarsTheme = createCssVariablesTheme({ 
+//   name: 'css-variables',
+//   variablePrefix: '--shiki-',
+//   variableDefaults: {},
+//   fontStyle: true
+// })
 
 const html = ref<string | null>(null)
 
 onMounted(async () => {
   if (!code || !lang) return
 
-  html.value = await codeToHtml(code.trim(), {
-    lang,
-    theme: geistTheme
-  })
+  html.value = await codeToHtml(
+    code.trim(),
+    {
+      lang,
+      theme: geistTheme,
+      transformers: [
+        {
+          line(node, line) {
+            if (highlights?.includes(line)) {
+              addClassToHast(node, 'highlighted')
+            }
+          }
+        }
+      ]
+    },
+  )
 })
 
 const isOpen = ref(false)

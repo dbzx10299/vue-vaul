@@ -1,12 +1,20 @@
 import { defineConfig } from 'vitepress'
 import { geistTheme } from './geist-theme.js'
+// import { createCssVariablesTheme } from 'shiki/core'
+
+// const cssVarsTheme = createCssVariablesTheme({ 
+//   name: 'css-variables',
+//   variablePrefix: '--shiki-',
+//   variableDefaults: {},
+//   fontStyle: true
+// })
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Vue Vaul",
   description: "A drawer component for Vue",
   markdown: {
-    theme: geistTheme
+    theme: geistTheme,
   },
   cleanUrls: true,
   appearance: 'force-dark',

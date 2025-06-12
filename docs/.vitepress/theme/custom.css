@@ -66,6 +66,34 @@
   --vp-c-gutter: var(--vp-c-bg);
   --vp-c-border: hsl(0 0% 12%);
   --vp-c-divider: hsl(0 0% 12%);
+
+  --shiki-foreground: #e3e7e6;
+  --shiki-background: hsl(0 0% 4% / 1);
+  --shiki-token-constant: #47a8ff;
+  --shiki-token-string: #00ca50;
+  --shiki-token-comment: #666;
+  --shiki-token-keyword: #ff4d8d;
+  --shiki-token-parameter: #ff9300;
+  --shiki-token-function: #c472fb;
+  --shiki-token-string-expression: #00ca50;
+  --shiki-token-punctuation: #ededed;
+  --shiki-token-link: #00ca50;
+}
+
+.highlighted {
+  /* background: #0f2f57; */
+  background: rgb(78 172 154 / 10%);
+}
+
+.highlighted::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  left: 0;
+  /* background: #52a8ff; */
+  background: rgb(0 215 175 / 68%);
 }
 
 ::selection {
