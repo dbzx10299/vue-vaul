@@ -873,7 +873,7 @@ Set the `dismissible` prop to `false` to prevent the user from closing the drawe
 
 ## Controlled Drawer
 
-You can use the open prop to programmatically open or close the drawer. You can also pass the onOpenChange prop which will be called when the open state of the dialog changes, it's useful if you want to react to esc/outside clicks when controlled.
+You can use the open prop to programmatically open or close the drawer. You can also pass the `onOpenChange` prop which will be called when the open state of the dialog changes, it's useful if you want to react to esc/outside clicks when controlled.
 
 <CodePreview
   :code="controlledDrawer"
@@ -899,7 +899,7 @@ Nest drawers inside each other.
 
 ## Side Drawer
 
-Set the direction prop to "right" or "left" to change the position of the drawer. Use the `--initial-transform` CSS variable to adjust the animation, useful when the drawer does not touch the edge of the screen (like in this case).
+Set the direction prop to `right` or `left` to change the position of the drawer. Use the `--initial-transform` CSS variable to adjust the animation, useful when the drawer does not touch the edge of the screen (like in this case).
 
 <CodePreview
   :code="sideDrawer"
