@@ -297,7 +297,8 @@ export const geistTheme = {
         'string.quoted.double.html'
       ],
       settings: {
-        foreground: 'rgb(0,215,175)'
+        // foreground: 'rgb(0,215,175)'
+        foreground: 'var(--ds-teal)'
       }
     },
     {

@@ -67,6 +67,10 @@
   --vp-c-border: hsl(0 0% 12%);
   --vp-c-divider: hsl(0 0% 12%);
 
+  /* code highlighting */
+  --ds-teal: rgb(0,215,175);
+  /*  */
+
   --shiki-foreground: #e3e7e6;
   --shiki-background: hsl(0 0% 4% / 1);
   --shiki-token-constant: #47a8ff;
@@ -78,6 +82,16 @@
   --shiki-token-string-expression: #00ca50;
   --shiki-token-punctuation: #ededed;
   --shiki-token-link: #00ca50;
+}
+
+@media (color-gamut:p3) {
+  @supports (color: oklch(0 0 0)) {
+    :root {
+      --vp-c-brand-1: oklch(0.82 0.23 167.82);
+      
+      --ds-teal: oklch(0.82 0.23 167.82);
+    }
+  }
 }
 
 .highlighted {
@@ -141,7 +155,7 @@ a {
 
 @media (hover: hover) {
   .vp-doc a:hover {
-    color: #00ffd0;
+    color: var(--vp-c-brand-1);
   }
 }
 
