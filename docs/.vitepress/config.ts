@@ -63,6 +63,7 @@ export default defineConfig({
     ['meta', { name: 'author', content: 'David Bender' }],
     ['meta', { property: 'og:title', content: 'Vue Vaul' }],
     ['meta', { property: 'og:description', content: 'Vue Vaul: A drawer component for Vue' }],
+    ['meta', { property: 'og:image', content: '/og-image.jpg' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0, viewport-fit=cover' }],
   ],
