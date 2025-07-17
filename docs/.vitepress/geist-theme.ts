@@ -294,7 +294,11 @@ export const geistTheme = {
         'punctuation.definition.interpolation.end.html.vue',
         'constant.character.escape.backslash.regexp',
         'string.regexp.ts',
-        'string.quoted.double.html'
+        'string.quoted.double.html',
+        'support.type.primitive.ts',
+        'support.type.builtin.ts',
+        'keyword.operator.optional.ts',
+        'meta.brace.square.ts',
       ],
       settings: {
         // foreground: 'rgb(0,215,175)'
@@ -316,13 +320,10 @@ export const geistTheme = {
         'variable.other.constant.property.ts',
         'meta.type.parameters.ts',
         'keyword.operator.comparison.css',
-        'meta.brace.square.ts',
         'keyword.control.at-rule.media.css',
         'punctuation.definition.keyword.css',
         'punctuation.definition.entity.css',
         'punctuation.definition.block.sequence.item.yaml',
-        'support.type.primitive.ts',
-        'keyword.operator.optional.ts',
         'keyword.control.trycatch.js',
         'keyword.control.trycatch.ts',
         'keyword.operator.spread.js',
