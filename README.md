@@ -36,6 +36,8 @@ This project also partially contains code derived or copied from the following p
 
 - [Vaul](https://github.com/emilkowalski/vaul)
 
+- [Reka UI dialog](https://reka-ui.com/docs/components/dialog)
+
 ## Licenses
 
 This project is licensed under the [MIT License](LICENSE).
