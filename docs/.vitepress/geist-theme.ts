@@ -3,6 +3,22 @@ export const geistTheme = {
   settings: [
     {
       scope: [
+        'punctuation.definition.parameters.begin.js',
+        'punctuation.definition.parameters.end.js',
+        'punctuation.definition.parameters.begin.ts',
+        'punctuation.definition.parameters.end.ts',
+        'meta.brace.square.ts',
+        'meta.brace.round.js',
+        'meta.brace.round.ts',
+        // for v:bind :
+        'punctuation.separator.key-value.html',
+      ],
+      settings: {
+        foreground: '#fff'
+      }
+    },
+    {
+      scope: [
         'entity.name.tag.html',
         'entity.name.tag.script.html.vue',
         'variable.other.object.js',
@@ -17,7 +33,6 @@ export const geistTheme = {
         'variable.other.constant.ts',
         'variable.other.readwrite.alias.ts',
         'meta.array.literal.js',
-        'entity.name.tag.template.html.vue',
         'meta.template-tag.end',
         'variable.other.readwrite.js',
         'variable.other.readwrite.ts',
@@ -40,9 +55,6 @@ export const geistTheme = {
         'punctuation.separator.parameter.js',
         'keyword.other.debugger.js',
         'variable.other.object.property.js',
-        'support.function.misc.css',
-        'entity.other.attribute-name.class.css',
-        'entity.other.attribute-name.id.css',
         'variable.object.property.ts'
       ],
       settings: {
@@ -51,27 +63,16 @@ export const geistTheme = {
     },
     {
       scope: [
-        'meta.object-literal.key.js'
-      ],
-      settings: {
-        // foreground: 'rgb(0 215 175 / 68%)'
-        foreground: '#eaeaea'
-      }
-    },
-    {
-      scope: [
         'meta.property-list.css',
         'support.type.property-name.array.toml',
         'punctuation.definition.block.sequence.item.yaml',
         'variable.other.readwrite.alias.js',
+        'meta.object-literal.key.js',
         'variable.other.readwrite.alias.ts',
         'support.type.property-name.json'
       ],
       settings: {
         foreground: 'hsl(0 0% 90%)'
-        // foreground: 'hsl(169 48% 90% / 1)'
-        // foreground: 'rgb(212 221 219)'
-        // foreground: 'rgb(194 209 206)'
       }
     },
     {
@@ -92,8 +93,6 @@ export const geistTheme = {
     },
     {
       scope: [
-        'support.type.property-name.css',
-        'support.type.vendored.property-name.css',
         'punctuation.eq.toml',
         'string.quoted.single.basic.line.toml',
         'punctuation.definition.table.toml',
@@ -106,8 +105,8 @@ export const geistTheme = {
     },
     {
       scope: [
-        'variable.argument.css',
-        'entity.other.attribute-name.html'
+        'entity.other.attribute-name.html',
+        'comment.block.css'
       ],
       settings: {
         foreground: 'hsl(0 0% 50%)'
@@ -115,10 +114,57 @@ export const geistTheme = {
     },
     {
       scope: [
-
+        'comment.line.double-slash.js',
+        'comment.line.double-slash.ts',
+        'comment.block.documentation.js',
+        'comment.block.documentation.ts',
+        'comment.block.js',
+        'comment.block.ts',
+        'punctuation.definition.comment.js',
+        'punctuation.definition.comment.ts',
+        'meta.brace.square.js',
+        'keyword.control.conditional.js',
+        'keyword.control.conditional.ts',
+        'keyword.operator.type.annotation.ts',
+        'punctuation.section.property-list.begin.bracket.curly.css',
+        'punctuation.section.property-list.end.bracket.curly.css',
       ],
       settings: {
-        foreground: 'hsl(0 0% 40%)'
+        foreground: 'hsl(0 0% 40%)' //#666
+      }
+    },
+    {
+      scope: [
+        'punctuation.definition.comment.yaml',
+        'comment.line.number-sign.yaml',
+        'comment.block.json',
+        'punctuation.separator.key-value.js',
+        'punctuation.separator.key-value.ts',
+        'keyword.operator.assignment.js',
+        // 'punctuation.separator.key-value.html',
+        'punctuation.attribute-shorthand.slot.html.vue',
+        'keyword.operator.assignment.ts',
+        'punctuation.definition.tag.begin.js.jsx',
+        'punctuation.definition.tag.end.js.jsx',
+        'punctuation.definition.tag.begin.js',
+        'punctuation.definition.tag.end.js',
+        'comment.line.graphql.js',
+        'punctuation.colon.graphql',
+        'comment.block.graphql',
+        'comment.line.number-sign.shell',
+        'constant.character.escape.line-continuation.shell',
+        'punctuation.separator.dictionary.key-value.json',
+        'punctuation.support.type.property-name.begin.json',
+        'punctuation.support.type.property-name.end.json',
+        'keyword.control.as.ts',
+        'meta.brace.angle.ts',
+        'source.ts.embedded.html.vue',
+        'keyword.operator.relational.js',
+        'punctuation.definition.binding-pattern.object.js',
+        'punctuation.definition.binding-pattern.object.ts',
+      ],
+      settings: {
+        foreground: 'hsl(0 0% 30%)'
       }
     },
     {
@@ -128,10 +174,7 @@ export const geistTheme = {
         'punctuation.accessor.ts',
         'punctuation.definition.interpolation.begin.html.vue',
         'punctuation.definition.interpolation.end.html.vue',
-        'punctuation.definition.parameters.begin.js',
-        'punctuation.definition.parameters.end.js',
-        'punctuation.definition.parameters.begin.ts',
-        'punctuation.definition.parameters.end.ts',
+
         'storage.type.type.ts',
         'storage.type.interface.ts',
         'variable.language.this.js',
@@ -142,19 +185,29 @@ export const geistTheme = {
         'punctuation.definition.dictionary.end.json',
         'punctuation.definition.block.js',
         'punctuation.definition.block.ts',
-        'meta.brace.round.js',
-        'meta.brace.round.ts',
         'punctuation.separator.comma.js',
         'punctuation.separator.comma.ts',
-        'punctuation.section.property-list.begin.bracket.curly.css',
-        'punctuation.section.property-list.end.bracket.curly.css',
+        'keyword.operator.optional.ts',
+        'storage.type.function.arrow.js',
+        'storage.type.function.arrow.ts',
+        'keyword.operator.type.ts',
+
         'punctuation.definition.parameters.begin.bracket.round.css',
         'punctuation.definition.parameters.end.bracket.round.css',
+        'punctuation.terminator.rule.css',
+        'punctuation.section.function.begin.bracket.round.css',
+        'punctuation.section.function.end.bracket.round.css',
+        'punctuation.separator.key-value.css',
+        'punctuation.separator.list.comma.css',
+        'entity.name.tag.nesting.selector.css',
+        'entity.other.attribute-name.pseudo-element.css',
         'punctuation.definition.entity.begin.bracket.square.css',
-        'punctuation.definition.entity.end.bracket.square.css'
+        'punctuation.definition.entity.end.bracket.square.css',
+        'entity.other.attribute-name.css',
+        'entity.name.tag.css',
       ],
       settings: {
-        foreground: '#a0a0a0'
+        foreground: 'hsl(0 0% 63%)' // #a0a0a0
       }
     },
     {
@@ -183,10 +236,8 @@ export const geistTheme = {
         'variable.graphql',
         'meta.brace.square.graphql',
         'constant.other.option',
-        'entity.name.tag.css',
         'punctuation.section.media.begin.bracket.curly.css',
         'punctuation.section.media.end.bracket.curly.css',
-        'keyword.operator.arithmetic.css'
       ],
       settings: {
         foreground: 'rgb(92 100 97)'
@@ -203,64 +254,6 @@ export const geistTheme = {
     },
     {
       scope: [
-        // 'punctuation.definition.tag.begin.html',
-        // 'punctuation.definition.tag.end.html',
-        'comment.line.double-slash.js',
-        'comment.line.double-slash.ts',
-        'comment.block.documentation.js',
-        'comment.block.documentation.ts',
-        'comment.block.js',
-        'comment.block.ts',
-        'punctuation.definition.comment.js',
-        'punctuation.definition.comment.ts',
-        'punctuation.definition.comment.yaml',
-        'comment.line.number-sign.yaml',
-        'comment.block.json',
-        'punctuation.separator.key-value.js',
-        'punctuation.separator.key-value.ts',
-        'keyword.operator.assignment.js',
-        'punctuation.separator.key-value.html',
-        'punctuation.attribute-shorthand.slot.html.vue',
-        'keyword.operator.assignment.ts',
-        'keyword.operator.type.annotation.ts',
-        'punctuation.definition.tag.begin.js.jsx',
-        'punctuation.definition.tag.end.js.jsx',
-        'punctuation.definition.tag.begin.js',
-        'punctuation.definition.tag.end.js',
-        'comment.line.graphql.js',
-        'punctuation.colon.graphql',
-        'comment.block.graphql',
-        'comment.line.number-sign.shell',
-        'constant.character.escape.line-continuation.shell',
-        'punctuation.separator.dictionary.key-value.json',
-        'punctuation.support.type.property-name.begin.json',
-        'punctuation.support.type.property-name.end.json',
-        'keyword.control.as.ts',
-        'meta.brace.angle.ts',
-        'source.ts.embedded.html.vue',
-        'keyword.operator.relational.js',
-        'punctuation.definition.binding-pattern.object.js',
-        'punctuation.definition.binding-pattern.object.ts',
-        'punctuation.separator.key-value.css',
-        'punctuation.terminator.rule.css',
-        'comment.block.css'
-      ],
-      settings: {
-        foreground: '#464a4d'
-      }
-    },
-    {
-      scope: [
-        'meta.brace.square.js',
-        'keyword.control.conditional.js',
-        'keyword.control.conditional.ts',
-      ],
-      settings: {
-        foreground: '#6c6c6c'
-      }
-    },
-    {
-      scope: [
         'entity.name.function.js',
         'entity.name.function.ts',
         'meta.object.member.js',
@@ -271,12 +264,17 @@ export const geistTheme = {
         'entity.name.function.graphql',
         'string.quoted.double.graphql',
         'punctuation.assignment.graphql',
+
         'support.function.calc.css',
         'constant.numeric.css',
-        'variable.css',
-        'punctuation.section.function.begin.bracket.round.css',
-        'punctuation.section.function.end.bracket.round.css',
-        'entity.name.tag.nesting.selector.css',
+        'support.constant.property-value.css',
+        'support.function.misc.css',
+        'entity.other.attribute-name.class.css',
+        'entity.other.attribute-name.id.css',
+        'meta.function.variable.css',
+
+        'meta.property-value.css',
+
         'support.type.property-name.toml',
         'entity.name.tag.yaml',
         'constant.language.boolean.yaml',
@@ -287,21 +285,31 @@ export const geistTheme = {
         'string.quoted.double.ts',
         'constant.numeric.decimal.js',
         'constant.numeric.decimal.ts',
-        'storage.type.function.arrow.js',
-        'storage.type.function.arrow.ts',
+        'entity.name.type.alias.ts',
+        'entity.name.type.interface.ts',
+        'support.type.primitive.ts',
+        'support.type.builtin.ts',
+        'punctuation.definition.string.begin.ts',
+        'punctuation.definition.string.end.ts',
+        'punctuation.definition.string.begin.js',
+        'punctuation.definition.string.end.js',
+
         'entity.name.tag.html',
         'punctuation.definition.interpolation.begin.html.vue',
         'punctuation.definition.interpolation.end.html.vue',
         'constant.character.escape.backslash.regexp',
         'string.regexp.ts',
         'string.quoted.double.html',
-        'support.type.primitive.ts',
-        'support.type.builtin.ts',
-        'keyword.operator.optional.ts',
-        'meta.brace.square.ts',
+        'entity.name.tag.template.html.vue',
+        'text.html.vue-html entity.name.tag',
+        'text.html.vue-html support.class.component.html',
+        'text.html.vue-html entity.name.tag.template.html.vue',
+        'entity.name.tag.script.html.vue',
       ],
       settings: {
+        // foreground: 'oklch(0.82 0.23 167.82)'
         // foreground: 'rgb(0,215,175)'
+        // foreground: 'oklch(0.84 0.18 162.24)'
         foreground: 'var(--ds-teal)'
       }
     },
@@ -322,7 +330,9 @@ export const geistTheme = {
         'keyword.operator.comparison.css',
         'keyword.control.at-rule.media.css',
         'punctuation.definition.keyword.css',
-        'punctuation.definition.entity.css',
+        'punctuation.section.media.begin.bracket.curly.css',
+        'punctuation.section.media.end.bracket.curly.css',
+        
         'punctuation.definition.block.sequence.item.yaml',
         'keyword.control.trycatch.js',
         'keyword.control.trycatch.ts',
@@ -340,15 +350,41 @@ export const geistTheme = {
         'keyword.operator.expression.in.ts',
         'keyword.control.with.js',
         'keyword.control.with.ts',
-        'punctuation.definition.string.begin.ts',
-        'punctuation.definition.string.end.ts',
-        'punctuation.definition.string.begin.js',
-        'punctuation.definition.string.end.js',
         'punctuation.definition.tag.begin.html',
-        'punctuation.definition.tag.end.html'
+        'punctuation.definition.tag.end.html',
       ],
       settings: {
         foreground: 'rgb(0 215 175 / 68%)'
+      }
+    },
+    {
+      scope: [
+        'text.html.vue-html string.quoted.double.html',
+        'text.html.vue-html punctuation.definition.string.begin.html',
+        'text.html.vue-html punctuation.definition.string.end.html',
+        'text.html.vue-html string.quoted.single.ts',
+        'text.html.vue-html string.quoted.single.js',
+        'text.html.vue-html punctuation.definition.string.begin.ts',
+        'text.html.vue-html punctuation.definition.string.end.ts',
+        'text.html.vue-html punctuation.definition.string.begin.js',
+        'text.html.vue-html punctuation.definition.string.end.js',
+
+      ],
+      settings: {
+        foreground: '#999'
+      }
+    },
+    {
+      scope: [
+        'text.html.vue-html entity.other.attribute-name.html',
+        'support.type.property-name.css',
+        'support.type.vendored.property-name.css',
+        'variable.argument.css',
+        'variable.css',
+        'keyword.operator.arithmetic.css',
+      ],
+      settings: {
+        foreground: '#eee'
       }
     },
   ],
