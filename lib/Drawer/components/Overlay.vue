@@ -44,8 +44,8 @@ watch(isOpen, async (open) => {
 
 <template>
   <DialogOverlay
-    ref="overlayRef"
     v-if="modal"
+    ref="overlayRef"
     data-vaul-overlay=""
     :data-vaul-snap-points="isOpen && hasSnapPoints ? 'true' : 'false'"
     :data-vaul-snap-points-overlay="isOpen && shouldFade ? 'true' : 'false'"
