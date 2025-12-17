@@ -1,17 +1,16 @@
-
 import {
+  DialogClose,
   DialogDescription,
   DialogTitle,
-  DialogClose,
   DialogTrigger,
 } from 'reka-ui'
 
-import Root from './components/Root.vue'
-import NestedRoot from './components/NestedRoot.vue'
 import Content from './components/Content.vue'
+import Handle from './components/Handle.vue'
+import NestedRoot from './components/NestedRoot.vue'
 import Overlay from './components/Overlay.vue'
 import Portal from './components/Portal.vue'
-import Handle from './components/Handle.vue'
+import Root from './components/Root.vue'
 
 export const Drawer = {
   Root,
@@ -24,4 +23,4 @@ export const Drawer = {
   Close: DialogClose,
   Title: DialogTitle,
   Description: DialogDescription,
-};
+}

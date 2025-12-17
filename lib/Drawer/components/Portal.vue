@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { DialogPortal } from 'reka-ui'
-import { useForwardProps } from 'reka-ui';
+import { DialogPortal, useForwardProps } from 'reka-ui'
 
-type PortalProps = {
+interface PortalProps {
   to?: string | HTMLElement
   disabled?: boolean
   defer?: boolean
@@ -16,6 +15,6 @@ const forwardProps = useForwardProps(props)
 
 <template>
   <DialogPortal v-bind="forwardProps">
-    <slot/>
+    <slot />
   </DialogPortal>
 </template>

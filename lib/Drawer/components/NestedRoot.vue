@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import { inject } from 'vue'
 import type { DialogProps } from './Root.vue'
-import { DrawerContextKey } from '../types.ts';
-import Root from './Root.vue'
-
 import { useForwardProps } from 'reka-ui'
+import { inject } from 'vue'
+import { DrawerContextKey } from '../types.ts'
+
+import Root from './Root.vue'
 
 const props = defineProps<DialogProps>()
 const forwarded = useForwardProps(props)
 
-const { onNestedDrag, onNestedOpenChange, onNestedRelease } = inject(DrawerContextKey)!;
+const { onNestedDrag, onNestedOpenChange, onNestedRelease } = inject(DrawerContextKey)!
 
 if (!onNestedDrag) {
-  throw new Error('Drawer.NestedRoot must be placed in another drawer');
+  throw new Error('Drawer.NestedRoot must be placed in another drawer')
 }
 </script>
 
@@ -21,21 +21,21 @@ if (!onNestedDrag) {
     v-bind="forwarded"
     nested
     :open="props.open || undefined"
-    :onClose="() => {
+    :on-close="() => {
       onNestedOpenChange(false);
     }"
-    :onDrag="(e, p) => {
+    :on-drag="(e, p) => {
       onNestedDrag(e, p);
       onDrag?.(e, p);
     }"
-    :onOpenChange="(o) => {
+    :on-open-change="(o) => {
       if (o) {
         onNestedOpenChange(o);
       }
       onOpenChange?.(o);
     }"
-    :onRelease="onNestedRelease"
+    :on-release="onNestedRelease"
   >
-    <slot/>
+    <slot />
   </Root>
 </template>

@@ -41,8 +41,8 @@
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "lint": "eslint 'lib/**/*.{js,ts,css}'",
-    "lint:fix": "eslint 'lib/**/*.{js,ts,css}' --fix"
+    "lint": "eslint 'lib/**/*.{js,ts,vue,css}'",
+    "lint:fix": "eslint 'lib/**/*.{js,ts,vue,css}' --fix"
   },
   "dependencies": {
     "reka-ui": "^2.2.1",

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref, inject, watch, nextTick } from 'vue'
 import { DialogOverlay } from 'reka-ui'
+import { inject, nextTick, ref, watch } from 'vue'
 import { useRemoveScroll } from 'vue-remove-scroll'
 import { DrawerContextKey } from '../types.ts'
 
@@ -12,26 +12,26 @@ const {
   shouldFade,
   isOpen,
   modal,
-  shouldAnimate
+  shouldAnimate,
 } = inject(DrawerContextKey)!
 
 const hasSnapPoints = ref(snapPoints && snapPoints.length > 0)
 const onMouseUp = (event: PointerEvent) => onRelease(event)
 
-
 let _disableScroll: () => void
 
-watch(isOpen, async open => {
+watch(isOpen, async (open) => {
   // if there is no modal, don't lock the scroll
-  if (!modal) return
+  if (!modal)
+    return
 
   if (open) {
     await nextTick()
 
     const { enableScroll, disableScroll } = useRemoveScroll({
-      excludedElements: [drawerRef.value?.$el]
+      excludedElements: [drawerRef.value?.$el],
     })
-    
+
     enableScroll()
 
     _disableScroll = disableScroll
@@ -45,11 +45,11 @@ watch(isOpen, async open => {
 <template>
   <DialogOverlay
     v-if="modal"
-    @mouseup="onMouseUp"
     ref="overlayRef"
     data-vaul-overlay=""
     :data-vaul-snap-points="isOpen && hasSnapPoints ? 'true' : 'false'"
     :data-vaul-snap-points-overlay="isOpen && shouldFade ? 'true' : 'false'"
     :data-vaul-animate="shouldAnimate ? 'true' : 'false'"
+    @mouseup="onMouseUp"
   />
 </template>
