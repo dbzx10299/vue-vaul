@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref, inject, watch } from 'vue'
 import { DialogContent } from 'reka-ui'
-import type { DrawerDirection, DrawerContext } from '../types';
+import type { DrawerDirection } from '../types';
+import { DrawerContextKey } from '../types.ts';
 
 type ContentProps = {
   onPointerDownOutside?: (event: PointerEvent) => void;
@@ -29,7 +30,7 @@ const {
   handleOnly,
   shouldAnimate,
   autoFocus,
-} = inject('drawerContext') as DrawerContext;
+} = inject(DrawerContextKey)!;
 // Needed to use transition instead of animations
 const delayedSnapPoints = ref(false)
 const pointerStartRef = ref<{ x: number; y: number } | null>(null);

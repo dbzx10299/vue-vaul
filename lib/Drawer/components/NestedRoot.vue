@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { inject } from 'vue'
 import type { DialogProps } from './Root.vue'
-import type { DrawerContext } from '../types'
+import { DrawerContextKey } from '../types.ts';
 import Root from './Root.vue'
 
 import { useForwardProps } from 'reka-ui'
@@ -9,7 +9,7 @@ import { useForwardProps } from 'reka-ui'
 const props = defineProps<DialogProps>()
 const forwarded = useForwardProps(props)
 
-const { onNestedDrag, onNestedOpenChange, onNestedRelease } = inject('drawerContext') as DrawerContext;
+const { onNestedDrag, onNestedOpenChange, onNestedRelease } = inject(DrawerContextKey)!;
 
 if (!onNestedDrag) {
   throw new Error('Drawer.NestedRoot must be placed in another drawer');

@@ -2,11 +2,20 @@
 import { ref, inject, watch, nextTick } from 'vue'
 import { DialogOverlay } from 'reka-ui'
 import { useRemoveScroll } from 'vue-remove-scroll'
-import type { DrawerContext } from '../types'
+import { DrawerContextKey } from '../types.ts'
 
-const { drawerRef, overlayRef, snapPoints, onRelease, shouldFade, isOpen, modal, shouldAnimate } = inject<DrawerContext>('drawerContext')!
+const {
+  drawerRef,
+  overlayRef,
+  snapPoints,
+  onRelease,
+  shouldFade,
+  isOpen,
+  modal,
+  shouldAnimate
+} = inject(DrawerContextKey)!
 
-const hasSnapPoints = ref(snapPoints && snapPoints.length > 0);
+const hasSnapPoints = ref(snapPoints && snapPoints.length > 0)
 const onMouseUp = (event: PointerEvent) => onRelease(event)
 
 

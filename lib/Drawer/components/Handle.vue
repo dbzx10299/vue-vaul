@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, inject } from 'vue'
-import type { DrawerContext } from '../types';
+import { DrawerContextKey } from '../types.ts';
 
 export type HandleProps = {
   preventCycle?: boolean;
@@ -21,7 +21,7 @@ const {
   isOpen,
   onPress,
   onDrag,
-} = inject('drawerContext') as DrawerContext;
+} = inject(DrawerContextKey)!;
 
 const closeTimeoutIdRef = ref<number | null>(null);
 const shouldCancelInteractionRef = ref(false);

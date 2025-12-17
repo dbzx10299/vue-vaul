@@ -1,4 +1,4 @@
-import type { Ref, ComponentPublicInstance } from 'vue'
+import type { Ref, ComponentPublicInstance, InjectionKey } from 'vue'
 
 export type DrawerDirection = 'top' | 'bottom' | 'left' | 'right';
 
@@ -28,13 +28,13 @@ export interface DrawerContext {
   modal: boolean;
   shouldFade: Ref<boolean>;
   activeSnapPoint?: Ref<number | string | null>;
-  setActiveSnapPoint: (o: number | string | null) => void;
   closeDrawer: () => void;
   openProp?: boolean;
   onOpenChange?: (o: boolean) => void;
   direction: DrawerDirection;
-  setBackgroundColorOnScale: boolean;
   handleOnly?: boolean;
   autoFocus?: boolean;
   shouldAnimate?: Ref<boolean>;
 }
+
+export const DrawerContextKey = Symbol() as InjectionKey<DrawerContext>

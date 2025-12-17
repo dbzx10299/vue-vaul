@@ -26,6 +26,8 @@ import {
 
 import { isIOS } from '../browser.ts';
 
+import { DrawerContextKey } from '../types.ts';
+
 export interface WithFadeFromProps {
   /**
    * Array of numbers from 0 to 100 that corresponds to % of the screen a given snap point should take up.
@@ -241,7 +243,7 @@ function onSnapPointChange(activeSnapPointIndex: number, snapPointsOffset: numbe
   }
 }
 
-provide('drawerContext', {
+provide(DrawerContextKey, {
   activeSnapPoint,
   snapPoints,
   drawerRef,
