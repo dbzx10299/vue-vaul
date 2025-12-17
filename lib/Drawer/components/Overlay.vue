@@ -5,8 +5,8 @@ import { useRemoveScroll } from 'vue-remove-scroll'
 import { DrawerContextKey } from '../types.ts'
 
 const {
-  drawerRef,
   overlayRef,
+  drawerRef,
   snapPoints,
   onRelease,
   shouldFade,
@@ -44,8 +44,8 @@ watch(isOpen, async (open) => {
 
 <template>
   <DialogOverlay
-    v-if="modal"
     ref="overlayRef"
+    v-if="modal"
     data-vaul-overlay=""
     :data-vaul-snap-points="isOpen && hasSnapPoints ? 'true' : 'false'"
     :data-vaul-snap-points-overlay="isOpen && shouldFade ? 'true' : 'false'"
