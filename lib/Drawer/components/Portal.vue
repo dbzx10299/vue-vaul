@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { DialogPortal, useForwardProps } from 'reka-ui'
 
-interface PortalProps {
+export interface PortalProps {
   to?: string | HTMLElement
   disabled?: boolean
   defer?: boolean

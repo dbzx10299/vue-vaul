@@ -4,7 +4,7 @@ import { DialogContent } from 'reka-ui'
 import { inject, ref, watch } from 'vue'
 import { DrawerContextKey } from '../types.ts'
 
-interface ContentProps {
+export interface ContentProps {
   onPointerDownOutside?: (event: PointerEvent) => void
   onOpenAutoFocus?: (event: PointerEvent) => void
   onPointerDown?: (event: PointerEvent) => void
