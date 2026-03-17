@@ -1,6 +1,6 @@
 {
   "name": "vue-vaul",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "A drawer component for Vue",
   "author": "David Bender <https://github.com/dbzx10299>",
   "type": "module",
