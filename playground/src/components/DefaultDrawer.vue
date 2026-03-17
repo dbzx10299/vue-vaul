@@ -1,5 +1,5 @@
-<script setup>
-import { Drawer } from '../../lib'
+<script setup lang="ts">
+import { Drawer } from '../../../src'
 </script>
 
 <template>

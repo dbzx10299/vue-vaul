@@ -1,17 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { codeToHtml, addClassToHast } from 'shiki'
-// import { createCssVariablesTheme } from 'shiki/core'
 import { geistTheme } from '../geist-theme.ts'
 
 const { code, lang, highlights } = defineProps<{code?: string; lang?: string, highlights?: number[] }>()
-
-// const cssVarsTheme = createCssVariablesTheme({ 
-//   name: 'css-variables',
-//   variablePrefix: '--shiki-',
-//   variableDefaults: {},
-//   fontStyle: true
-// })
 
 const html = ref<string | null>(null)
 

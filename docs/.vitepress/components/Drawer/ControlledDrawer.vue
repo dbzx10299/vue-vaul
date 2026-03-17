@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { Drawer } from '../../../../lib'
+import { Drawer } from '../../../../src'
 import './drawer.css'
 
 const open = ref(false)

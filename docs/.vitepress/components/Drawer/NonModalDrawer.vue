@@ -1,5 +1,5 @@
 <script setup>
-import { Drawer } from '../../../../lib'
+import { Drawer } from '../../../../src'
 import './drawer.css'
 </script>
 

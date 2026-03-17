@@ -1,28 +1,22 @@
-import { fileURLToPath } from 'node:url'
-import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import dts from 'vite-plugin-dts'
+/// <reference types="vitest/config" />
+import { playwright } from '@vitest/browser-playwright'
+import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
-import { libInjectCss } from 'vite-plugin-lib-inject-css'
 
-// https://vite.dev/config/
 export default defineConfig({
+  root: './playground',
   plugins: [
     vue(),
-    tailwindcss(),
-    libInjectCss(),
-    dts({
-      tsconfigPath: fileURLToPath(new URL('tsconfig.lib.json', import.meta.url))
-    })
+    tailwindcss()
   ],
-  build: {
-    lib: {
-      entry: fileURLToPath(new URL('lib/index.ts', import.meta.url)),
-      formats: ['es'],
-      fileName: 'index'
+  test: {
+    root: '.',
+    browser: {
+      enabled: true,
+      provider: playwright(),
+      instances: [{ browser: 'chromium' }],
+      headless: true,
     },
-    rollupOptions: {
-      external: ['vue'],
-    }
-  }
+  },
 })

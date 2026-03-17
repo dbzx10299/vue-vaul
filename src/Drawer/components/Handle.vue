@@ -92,7 +92,7 @@ function handleCancelInteraction() {
       if (handleOnly) onPress(e);
       handleStartInteraction();
     }"
-    @pointermove="e => {
+    @pointermove="(e: PointerEvent) => {
       if (handleOnly) onDrag(e)
     }"
   >

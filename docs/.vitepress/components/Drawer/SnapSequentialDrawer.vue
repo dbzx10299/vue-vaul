@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Drawer } from '../../../../lib'
+import { Drawer } from '../../../../src'
 import './drawer.css'
 
 const snapPoints = ['148px', '355px', 1]
