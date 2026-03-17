@@ -54,7 +54,7 @@
     "@vitejs/plugin-vue": "^6.0.5",
     "@vitest/browser-playwright": "^4.1.0",
     "bumpp": "^11.0.1",
-    "geist-vaul": "^1.0.6",
+    "geist-vaul": "^1.0.7",
     "playwright": "^1.58.2",
     "tailwindcss": "^4.2.1",
     "tsdown": "^0.21.3",
